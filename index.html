@@ -169,7 +169,7 @@
 <div class="header-meta">
 <span>Última atualização: Maio 2026</span>
 <span>Todas as unidades</span>
-<span>31 setores monitorados</span>
+<span>35 setores monitorados</span>
 </div>
 </div>
 </header>
@@ -181,7 +181,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Total de Setores</div>
-<div class="kpi-value">31</div>
+<div class="kpi-value">35</div>
 <div class="kpi-sub">Todas as unidades</div>
 </div>
 </div>
@@ -220,7 +220,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Pessoas Finalizadas</div>
-<div class="kpi-value mono">91 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 207</span></div>
+<div class="kpi-value mono">94 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 176</span></div>
 <div class="kpi-sub">Usuários configurados</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -238,6 +238,34 @@
 </div>
 </div>
 
+<!-- BANNER PRAZO -->
+<div style="margin: 28px 0 0; padding: 20px 24px; background: #fff; border: 1px solid #dde1e8; border-left: 4px solid #0f62fe; border-radius: 8px; box-shadow: 0 1px 2px rgba(15,22,36,0.04);">
+  <div style="display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+    <div style="flex:1; min-width:260px;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:#525252; margin-bottom:8px;">📅 Previsão de Fechamento do Projeto</div>
+      <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#161616; margin-bottom:6px;">Cronograma previsto até <span style="color:#0f62fe;">31 de julho de 2026</span></div>
+      <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#525252; line-height:1.6;">
+        O projeto está em andamento com <strong>35 setores</strong> monitorados distribuídos entre Matriz, Contagem CEMIG, Contagem CNH e demais unidades.
+        Atualmente <strong>94 de 176 usuários mapeados</strong> estão configurados (53%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
+        <span style="color:#da1e28; font-weight:600;">Atenção:</span> pendências individuais como usuários ausentes durante a implantação e equipamentos com Windows 10 Home precisam ser resolvidas paralelamente ao cronograma para garantir o fechamento até o prazo.
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:8px; min-width:180px;">
+      <div style="background:#defbe6; border-radius:6px; padding:12px 16px; text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#24a148; text-transform:uppercase; letter-spacing:.06em;">Prazo restante</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:#24a148;" id="banner-days">—</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#24a148;">até 31/07/2026</div>
+      </div>
+      <div style="background:#d0e2ff; border-radius:6px; padding:12px 16px; text-align:center;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#0f62fe; text-transform:uppercase; letter-spacing:.06em;">Usuários / semana</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:#0f62fe;" id="banner-rate">—</div>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:#0f62fe;">necessários para fechar no prazo</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /BANNER PRAZO -->
+
 <!-- MATRIZ -->
 <div class="section-label">
 <span class="pill">Matriz</span>
@@ -251,7 +279,7 @@
 <tr>
 <td><span class="setor-name">Seminovos</span></td>
 <td><span class="status done">Finalizado</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="5" data-total="5" data-color="green"></div><div class="prog-info"><span class="prog-fraction">5 / 5</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="6" data-total="6" data-color="green"></div><div class="prog-info"><span class="prog-fraction">6 / 6</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>23/03/26 · 08–09h<b>Implantação</b>23/03/26 · 09–12h<b>Suporte</b>24–25/03/26<b>Revisão</b>26/03/26</td>
 <td class="obs-cell">Todos os 5 usuários configurados com sucesso.</td>
 </tr>
@@ -272,9 +300,16 @@
 <tr>
 <td><span class="setor-name">Fiscal</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="12" data-total="13" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">12 / 13</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="9" data-total="10" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">9 / 10</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>01/04/26 · 09–10h<b>Implantação</b>01/04/26 · 10–18h<b>Suporte</b>02–03/04/26<b>Revisão</b>06/04/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span><strong>Guilherme Veloso</strong> agendado para dia 12.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Eliane Regina</strong> aguarda configuração.</td>
+</tr>
+<tr>
+<td><span class="setor-name">Controladoria</span></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="2" data-total="3" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">2 / 3</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td class="dates-cell"><span class="dim">A definir</span></td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Guilherme Veloso</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Faturamento</span></td>
@@ -292,10 +327,10 @@
 </tr>
 <tr>
 <td><span class="setor-name">Frotas</span></td>
-<td><span class="status done">Finalizado</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="6" data-total="6" data-color="green"></div><div class="prog-info"><span class="prog-fraction">6 / 6</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="6" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">6 / 7</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>20/04/26 · 09–10h<b>Implantação</b>20/04/26 · 10–18h<b>Suporte</b>22–23/04/26<b>Revisão</b>24/04/26</td>
-<td class="obs-cell">Todos os 6 usuários configurados com sucesso.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Pollyana Santos</strong> (São Paulo) aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">DP</span></td>
@@ -320,24 +355,24 @@
 </tr>
 <tr>
 <td><span class="setor-name">Jurídico</span></td>
-<td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="1" data-total="2" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>14/05/26 · 09–10h<b>Implantação</b>14/05/26 · 10–18h<b>Suporte</b>15–18/05/26<b>Revisão</b>19/05/26</td>
-<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Faniana da Silva Cunha</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Locação</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="5" data-total="9" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">5 / 9</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="4" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">4 / 7</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>19/05/26 · 09–10h<b>Implantação</b>19/05/26 · 10–18h<b>Suporte</b>20–21/05/26<b>Revisão</b>22/05/26</td>
-<td class="obs-cell">4 usuários aguardam configuração.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Izabella Afonso</strong>, <strong>Michael Santos</strong> e <strong>Valério</strong> aguardam configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Manutenção</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="5" data-total="9" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">5 / 9</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="7" data-total="9" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">7 / 9</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>25/05/26 · 09–10h<b>Implantação</b>25/05/26 · 10–18h<b>Suporte</b>26–27/05/26<b>Revisão</b>28/05/26</td>
-<td class="obs-cell">4 pessoas pendentes de 9 mapeadas. <span class="tag">Atenção</span><strong>Luciano Miranda</strong> possui Windows 10 Home — requer atenção especial na configuração do AD.</td>
+<td class="obs-cell"><span class="tag">Pendente</span>Aguardam configuração: <strong>Miguel Costa</strong> e <strong>Luciano Cruz</strong> <span class="tag">Atenção</span>Windows 10 Home.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Comercial</span></td>
@@ -361,7 +396,7 @@
 <div class="section-label">
 <span class="pill cemig">Contagem – CEMIG</span>
 <hr>
-<span class="count">9 setores</span>
+<span class="count">10 setores</span>
 </div>
 <div class="table-wrap">
 <table>
@@ -370,21 +405,21 @@
 <tr>
 <td><span class="setor-name">SGI</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="1" data-total="3" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 3</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="1" data-total="2" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>08/06/26<b>Implantação</b>08/06/26<b>Suporte</b>09/06/26<b>Revisão</b>10/06/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>2 usuários aguardam configuração.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Camila Silva</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">RH</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="1" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 1</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>11/06/26<b>Implantação</b>11/06/26<b>Suporte</b>12/06/26<b>Revisão</b>15/06/26</td>
-<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Gabriella Oliveira</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Recebimento</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="3" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 3</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>15/06/26<b>Implantação</b>15/06/26<b>Suporte</b>16/06/26<b>Revisão</b>17/06/26</td>
 <td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
@@ -398,16 +433,16 @@
 <tr>
 <td><span class="setor-name">Inventário</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="8" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 8</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>22/06/26<b>Implantação</b>22/06/26<b>Suporte</b>23/06/26<b>Revisão</b>24/06/26</td>
 <td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
 <tr>
-<td><span class="setor-name">Financeiro</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="1" data-total="2" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><span class="setor-name">Faturamento</span></td>
+<td><span class="status pending">Pendente</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="2" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>25/06/26<b>Implantação</b>25/06/26<b>Suporte</b>26/06/26<b>Revisão</b>29/06/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>1 usuário aguarda configuração.</td>
+<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Expedição</span></td>
@@ -419,16 +454,23 @@
 <tr>
 <td><span class="setor-name">DP</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="2" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>02/07/26<b>Implantação</b>02/07/26<b>Suporte</b>03/07/26<b>Revisão</b>06/07/26</td>
 <td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Comercial</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="2" data-total="3" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">2 / 3</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><span class="status pending">Pendente</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="2" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>06/07/26<b>Implantação</b>06/07/26<b>Suporte</b>07/07/26<b>Revisão</b>08/07/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>1 usuário aguarda configuração.</td>
+<td class="obs-cell"><span class="tag">Atenção</span>2 máquinas inseridas na OU sem identificação de proprietário — verificar e associar aos usuários corretos.</td>
+</tr>
+<tr>
+<td><span class="setor-name">Transportes</span></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="2" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">2 / 7</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td class="dates-cell"><span class="dim">Não agendado</span></td>
+<td class="obs-cell"><span class="tag">Pendente</span>5 usuários aguardam configuração.</td>
 </tr>
 </tbody>
 </table>
@@ -438,25 +480,32 @@
 <div class="section-label">
 <span class="pill cnh">Contagem – CNH</span>
 <hr>
-<span class="count">2 setores</span>
+<span class="count">3 setores</span>
 </div>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Setor</th><th>Status</th><th>Progresso</th><th>Datas</th><th>Observações / Pendências</th></tr></thead>
 <tbody>
 <tr>
-<td><span class="setor-name">Inventário</span></td>
+<td><span class="setor-name">SGI</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="1" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 1</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>09/07/26<b>Implantação</b>09/07/26<b>Suporte</b>10/07/26<b>Revisão</b>13/07/26</td>
-<td class="obs-cell">Nenhuma pessoa finalizada. Implantação não iniciada.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Diego</strong> aguarda configuração.</td>
 </tr>
 <tr>
-<td><span class="setor-name">Operação</span></td>
+<td><span class="setor-name">Inventário</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="1" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 1</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td class="dates-cell"><b>Alinhamento</b>09/07/26<b>Implantação</b>09/07/26<b>Suporte</b>10/07/26<b>Revisão</b>13/07/26</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Alexis Martins</strong> aguarda configuração.</td>
+</tr>
+<tr>
+<td><span class="setor-name">Logística</span></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="1" data-total="10" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 10</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>14/07/26<b>Implantação</b>14/07/26<b>Suporte</b>15/07/26<b>Revisão</b>16/07/26</td>
-<td class="obs-cell">Nenhuma pessoa finalizada. Implantação não iniciada.</td>
+<td class="obs-cell"><span class="tag">Pendente</span>9 usuários aguardam configuração.</td>
 </tr>
 </tbody>
 </table>
@@ -466,46 +515,53 @@
 <div class="section-label">
 <span class="pill demais">Demais Unidades</span>
 <hr>
-<span class="count">5 unidades</span>
+<span class="count">6 unidades</span>
 </div>
 <div class="table-wrap">
 <table>
 <thead><tr><th>Unidade / Setor</th><th>Status</th><th>Progresso</th><th>Datas</th><th>Observações / Pendências</th></tr></thead>
 <tbody>
 <tr>
+<td><span class="setor-name">Triasa</span></td>
+<td><span class="status obs">Observação</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="blue"></div><div class="prog-info"><span class="prog-fraction">—</span><span class="prog-pct-text">em análise</span></div></div></td>
+<td class="dates-cell"><span class="dim">Não agendado</span></td>
+<td class="obs-cell"><span class="tag info">Em análise</span>Unidade <strong>Triasa</strong> sem cronograma definido. Quantidade de usuários ainda não levantada. Aguarda decisão da gestão.</td>
+</tr>
+<tr>
 <td><span class="setor-name">Uberlândia</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="2" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 2</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>17/07/26<b>Implantação</b>17/07/26<b>Suporte</b>20/07/26<b>Revisão</b>21/07/26</td>
-<td class="obs-cell">Implantação ainda não iniciada.</td>
+<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Montes Claros</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="3" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 3</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>17/07/26<b>Implantação</b>17/07/26<b>Suporte</b>20/07/26<b>Revisão</b>21/07/26</td>
-<td class="obs-cell">Implantação ainda não iniciada.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Mauricio</strong>, <strong>Pryscyla</strong> e <strong>Gabriel Malveira</strong> aguardam configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Juatuba</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="1" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 1</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>17/07/26<b>Implantação</b>17/07/26<b>Suporte</b>20/07/26<b>Revisão</b>21/07/26</td>
-<td class="obs-cell">Implantação ainda não iniciada.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Tania Mara Barbosa do Nascimento</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Pedreira</span></td>
-<td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
-<td class="dates-cell"><b>Alinhamento</b>22/07/26<b>Implantação</b>22/07/26<b>Suporte</b>23/07/26<b>Revisão</b>24/07/26</td>
-<td class="obs-cell">Implantação ainda não iniciada.</td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="1" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 7</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td class="dates-cell"><b>Alinhamento</b>02/08/26<b>Implantação</b>02/08/26<b>Suporte</b>03/08/26<b>Revisão</b>04/08/26</td>
+<td class="obs-cell"><span class="tag">Pendente</span>6 usuários aguardam configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Rio de Janeiro</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="4" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 4</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>27/07/26<b>Implantação</b>27/07/26<b>Suporte</b>28–29/07/26<b>Revisão</b>30/07/26</td>
-<td class="obs-cell">Implantação ainda não iniciada.</td>
+<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
 </tbody>
 </table>
@@ -570,16 +626,24 @@
   // CNH (2): Inventário(0/0), Operação(0/0)
   // Demais (5): todos (0/0)
   const rows = [
-    [5,5],[9,10],[5,7],[12,13],[9,9],[10,10],[6,6],[0,0],[5,6],[5,5],[0,0],[5,9],[5,9],[5,5],[0,0],
-    [1,3],[0,0],[0,0],[5,17],[0,0],[1,2],[1,3],[0,0],[2,3],
-    [0,0],[0,0],
-    [0,0],[0,0],[0,0],[0,0],[0,0]
+    // Matriz (16)
+    [6,6],[9,10],[5,7],[9,10],[2,3],[9,9],[10,10],[6,7],[0,0],[5,6],[5,5],[1,2],[4,8],[7,9],[5,5],[0,0],
+    // CEMIG (10)
+    [1,2],[0,1],[0,3],[5,17],[0,8],[0,2],[1,3],[0,2],[0,2],[2,7],
+    // CNH (3)
+    [0,1],[0,1],[1,10],
+    // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
+    [0,0],[0,2],[0,3],[0,1],[1,7],[0,4]
   ];
   const statuses = [
-    'done','partial','partial','partial','done','done','done','pending','partial','done','pending','partial','partial','done','obs',
-    'partial','pending','pending','partial','pending','partial','partial','pending','partial',
-    'pending','pending',
-    'pending','pending','pending','pending','pending'
+    // Matriz (16)
+    'done','partial','partial','partial','partial','done','done','partial','pending','partial','done','partial','partial','partial','done','obs',
+    // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
+    'partial','pending','pending','partial','pending','pending','partial','pending','pending','partial',
+    // CNH (3): SGI,Invent,Logist
+    'pending','pending','partial',
+    // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
+    'obs','pending','pending','pending','partial','pending'
   ];
 
   const totalSetores = statuses.length;
@@ -606,7 +670,21 @@
   renderDonut(document.getElementById('donut-pending'), (totalPending / totalSetores) * 100, 'red',    { labelText: totalPending });
   renderDonut(document.getElementById('donut-pct'),     pctGeral,                            'blue',   { labelText: pctGeral + '%' });
 
-  renderDonut(document.getElementById('donut-people'), (91 / 207) * 100, 'green', { labelText: '44%' });
+  // Banner prazo dinâmico
+  const deadline = new Date('2026-07-31');
+  const today = new Date();
+  const diffDays = Math.ceil((deadline - today) / (1000 * 60 * 60 * 24));
+  const bannerDays = document.getElementById('banner-days');
+  if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
+
+  // Ritmo necessário: usuários restantes / semanas restantes
+  const usersLeft = 176 - 94;
+  const weeksLeft = diffDays / 7;
+  const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
+  const bannerRate = document.getElementById('banner-rate');
+  if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
+
+  renderDonut(document.getElementById('donut-people'), (94 / 176) * 100, 'green', { labelText: '53%' });
 </script>
 
 </body>
