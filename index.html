@@ -220,7 +220,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Pessoas Finalizadas</div>
-<div class="kpi-value mono">96 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 185</span></div>
+<div class="kpi-value mono">101 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 187</span></div>
 <div class="kpi-sub">Usuários configurados</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -334,10 +334,10 @@
 </tr>
 <tr>
 <td><span class="setor-name">DP</span></td>
-<td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="0" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / —</span><span class="prog-pct-text">não iniciado</span></div></div></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="3" data-total="4" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">3 / 4</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>27/04/26 · 09–10h<b>Implantação</b>27/04/26 · 10–18h<b>Suporte</b>28–29/04/26<b>Revisão</b>30/04/26</td>
-<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
+<td class="obs-cell"><span class="tag">Atenção</span>Máquina da <strong>Vanessa</strong> possui Windows 11 Home — requer atenção especial na configuração do AD.</td>
 </tr>
 <tr>
 <td><span class="setor-name">RH</span></td>
@@ -530,10 +530,10 @@
 <tbody>
 <tr>
 <td><span class="setor-name">Triasa</span></td>
-<td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="8" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 8</span><span class="prog-pct-text">pessoas</span></div></div></td>
+<td><span class="status partial">Parcial</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="2" data-total="6" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">2 / 6</span><span class="prog-pct-text">pessoas</span></div></div></td>
 <td class="dates-cell"><b>Implantação</b>28/05/26 (quinta-feira)</td>
-<td class="obs-cell">Implantação agendada para 28/05/26. Nenhum usuário configurado até o momento.</td>
+<td class="obs-cell"><span class="tag">Atenção</span>Máquina de <strong>Alessandro Braga</strong> possui Windows 11 Home — requer atenção especial na configuração do AD.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Uberlândia</span></td>
@@ -634,9 +634,9 @@
   // Demais (5): todos (0/0)
   const rows = [
     // Matriz (17)
-    [6,6],[9,9],[5,7],[9,10],[2,3],[9,9],[10,10],[6,7],[0,0],[6,6],[5,5],[1,2],[5,7],[7,9],[5,5],[3,3],[0,0],
+    [6,6],[9,9],[5,7],[9,10],[2,3],[9,9],[10,10],[6,7],[3,4],[6,6],[5,5],[1,2],[5,7],[7,9],[5,5],[3,3],[0,0],
     // CEMIG (10)
-    [1,2],[0,1],[0,3],[5,17],[0,8],[0,2],[1,3],[0,2],[0,2],[2,7],
+    [1,2],[0,1],[0,3],[5,17],[2,6],[0,2],[1,3],[0,2],[0,2],[2,7],
     // CNH (3)
     [0,1],[0,1],[1,10],
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
@@ -644,13 +644,13 @@
   ];
   const statuses = [
     // Matriz (17)
-    'done','done','partial','partial','partial','done','done','partial','pending','done','done','partial','partial','partial','done','done','obs',
+    'done','done','partial','partial','partial','done','done','partial','partial','done','done','partial','partial','partial','done','done','obs',
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
     'partial','pending','pending','partial','pending','pending','partial','pending','pending','partial',
     // CNH (3): SGI,Invent,Logist
     'pending','pending','partial',
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
-    'pending','pending','pending','pending','partial','pending'
+    'partial','pending','pending','pending','partial','pending'
   ];
 
   const totalSetores = statuses.length;
@@ -685,13 +685,13 @@
   if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
 
   // Ritmo necessário: usuários restantes / semanas restantes
-  const usersLeft = 185 - 96;
+  const usersLeft = 187 - 101;
   const weeksLeft = diffDays / 7;
   const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
   const bannerRate = document.getElementById('banner-rate');
   if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
 
-  renderDonut(document.getElementById('donut-people'), (96 / 185) * 100, 'green', { labelText: '52%' });
+  renderDonut(document.getElementById('donut-people'), (101 / 187) * 100, 'green', { labelText: '54%' });
 </script>
 
 </body>
