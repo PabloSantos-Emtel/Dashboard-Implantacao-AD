@@ -166,8 +166,22 @@
 <div class="header-inner">
 <div class="badge">Projeto · Active Directory</div>
 <h1>Dashboard de <span>Implantação AD</span></h1>
+<div style="margin: 16px 0 10px; max-width: 600px;">
+  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--text-muted); letter-spacing:.04em; text-transform:uppercase;">Progresso Geral do Projeto</span>
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:600; color:var(--accent);" id="progress-bar-pct">—</span>
+  </div>
+  <div style="background:var(--border); border-radius:4px; height:8px; overflow:hidden;">
+    <div id="progress-bar-fill" style="height:100%; width:0%; background:linear-gradient(90deg, var(--accent), #24a148); border-radius:4px; transition: width 1.2s cubic-bezier(.4,0,.2,1);"></div>
+  </div>
+  <div style="display:flex; justify-content:space-between; margin-top:5px;">
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim);">0%</span>
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim);">Meta: 31/07/2026</span>
+    <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim);">100%</span>
+  </div>
+</div>
 <div class="header-meta">
-<span>Última atualização: Maio 2026</span>
+<span id="header-date">Última atualização: carregando...</span>
 <span>Todas as unidades</span>
 <span>36 setores monitorados</span>
 </div>
@@ -220,7 +234,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Máquinas Finalizadas</div>
-<div class="kpi-value mono">104 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 187</span></div>
+<div class="kpi-value mono">110 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 199</span></div>
 <div class="kpi-sub">Máquinas configuradas</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -246,7 +260,7 @@
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#161616; margin-bottom:6px;">Cronograma previsto até <span style="color:#0f62fe;">31 de julho de 2026</span></div>
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#525252; line-height:1.6;">
         O projeto está em andamento com <strong>36 setores</strong> monitorados distribuídos entre Matriz, Contagem CEMIG, Contagem CNH e demais unidades.
-        Atualmente <strong>92 de 176 máquinas mapeadas</strong> estão configurados (53%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
+        Atualmente <strong>110 de 199 máquinas mapeadas</strong> estão configuradas (55%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
         <span style="color:#da1e28; font-weight:600;">Atenção:</span> pendências individuais como máquinas não configuradas durante a implantação e equipamentos com Windows 10 Home precisam ser resolvidas paralelamente ao cronograma para garantir o fechamento até o prazo.
       </div>
     </div>
@@ -266,6 +280,46 @@
 </div>
 <!-- /BANNER PRAZO -->
 
+<!-- PROGRESSO POR GRUPO -->
+<div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; margin: 16px 0 0;">
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; border-left:3px solid var(--accent);">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); margin-bottom:8px;">Matriz</div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:var(--accent);" id="grp-pct-matriz">—</div>
+    <div style="background:var(--border); border-radius:3px; height:5px; margin-top:8px; overflow:hidden;"><div id="grp-bar-matriz" style="height:100%; width:0%; background:var(--accent); border-radius:3px; transition:width 1.2s ease;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim); margin-top:5px;" id="grp-frac-matriz">—</div>
+  </div>
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; border-left:3px solid #1c3a6e;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); margin-bottom:8px;">Contagem – CEMIG</div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:#1c3a6e;" id="grp-pct-cemig">—</div>
+    <div style="background:var(--border); border-radius:3px; height:5px; margin-top:8px; overflow:hidden;"><div id="grp-bar-cemig" style="height:100%; width:0%; background:#1c3a6e; border-radius:3px; transition:width 1.2s ease;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim); margin-top:5px;" id="grp-frac-cemig">—</div>
+  </div>
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; border-left:3px solid #6929c4;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); margin-bottom:8px;">Contagem – CNH</div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:#6929c4;" id="grp-pct-cnh">—</div>
+    <div style="background:var(--border); border-radius:3px; height:5px; margin-top:8px; overflow:hidden;"><div id="grp-bar-cnh" style="height:100%; width:0%; background:#6929c4; border-radius:3px; transition:width 1.2s ease;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim); margin-top:5px;" id="grp-frac-cnh">—</div>
+  </div>
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px 18px; border-left:3px solid #0e6027;">
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); margin-bottom:8px;">Demais Unidades</div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:22px; font-weight:600; color:#0e6027;" id="grp-pct-demais">—</div>
+    <div style="background:var(--border); border-radius:3px; height:5px; margin-top:8px; overflow:hidden;"><div id="grp-bar-demais" style="height:100%; width:0%; background:#0e6027; border-radius:3px; transition:width 1.2s ease;"></div></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; color:var(--text-dim); margin-top:5px;" id="grp-frac-demais">—</div>
+  </div>
+</div>
+<!-- /PROGRESSO POR GRUPO -->
+
+<!-- FILTRO -->
+<div style="display:flex; align-items:center; gap:8px; margin: 32px 0 -10px; flex-wrap:wrap;">
+  <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-muted); text-transform:uppercase; letter-spacing:.06em;">Filtrar:</span>
+  <button onclick="filterRows('all')" id="filter-all" style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 12px; border-radius:2px; border:1px solid var(--accent); background:var(--accent); color:#fff; cursor:pointer;">Todos</button>
+  <button onclick="filterRows('done')" id="filter-done" style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 12px; border-radius:2px; border:1px solid var(--green); background:transparent; color:var(--green); cursor:pointer;">✓ Finalizado</button>
+  <button onclick="filterRows('partial')" id="filter-partial" style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 12px; border-radius:2px; border:1px solid var(--yellow); background:transparent; color:#8a6d00; cursor:pointer;">⚠ Parcial</button>
+  <button onclick="filterRows('pending')" id="filter-pending" style="font-family:'IBM Plex Mono',monospace; font-size:11px; padding:5px 12px; border-radius:2px; border:1px solid var(--red); background:transparent; color:var(--red); cursor:pointer;">✗ Pendente</button>
+  <span id="filter-count" style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--text-dim); margin-left:4px;"></span>
+</div>
+<!-- /FILTRO -->
+
 <!-- MATRIZ -->
 <div class="section-label">
 <span class="pill">Matriz</span>
@@ -281,7 +335,7 @@
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="6" data-total="6" data-color="green"></div><div class="prog-info"><span class="prog-fraction">6 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>23/03/26 · 08–09h<b>Implantação</b>23/03/26 · 09–12h<b>Suporte</b>24–25/03/26<b>Revisão</b>26/03/26</td>
-<td class="obs-cell">Todos os 5 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 5 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Financeiro</span></td>
@@ -316,21 +370,21 @@
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="9" data-total="9" data-color="green"></div><div class="prog-info"><span class="prog-fraction">9 / 9</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>07/04/26 · 09–10h<b>Implantação</b>07/04/26 · 10–18h<b>Suporte</b>08–09/04/26<b>Revisão</b>10/04/26</td>
-<td class="obs-cell">Todos os 9 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 9 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Compras</span></td>
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="10" data-total="10" data-color="green"></div><div class="prog-info"><span class="prog-fraction">10 / 10</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>13/04/26 · 09–10h<b>Implantação</b>13/04/26 · 10–18h<b>Suporte</b>14–15/04/26<b>Revisão</b>16/04/26</td>
-<td class="obs-cell">Todos os 10 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 10 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Frotas</span></td>
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="7" data-total="7" data-color="green"></div><div class="prog-info"><span class="prog-fraction">7 / 7</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>20/04/26 · 09–10h<b>Implantação</b>20/04/26 · 10–18h<b>Suporte</b>22–23/04/26<b>Revisão</b>24/04/26</td>
-<td class="obs-cell">Todos os 7 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 7 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">DP</span></td>
@@ -344,14 +398,14 @@
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="6" data-total="6" data-color="green"></div><div class="prog-info"><span class="prog-fraction">6 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>04/05/26 · 09–10h<b>Implantação</b>04/05/26 · 10–18h<b>Suporte</b>05–06/05/26<b>Revisão</b>07/05/26</td>
-<td class="obs-cell">Todos os 6 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 6 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">SGI</span></td>
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="5" data-total="5" data-color="green"></div><div class="prog-info"><span class="prog-fraction">5 / 5</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>08/05/26 · 09–10h<b>Implantação</b>08/05/26 · 10–18h<b>Suporte</b>11–12/05/26<b>Revisão</b>13/05/26</td>
-<td class="obs-cell">Todos os 5 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 5 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Jurídico</span></td>
@@ -363,30 +417,30 @@
 <tr>
 <td><span class="setor-name">Locação</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="4" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">4 / 7</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="5" data-total="6" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">5 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>19/05/26 · 09–10h<b>Implantação</b>19/05/26 · 10–18h<b>Suporte</b>20–21/05/26<b>Revisão</b>22/05/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span><strong>Michael Santos</strong> e <strong>Valério</strong> aguardam configuração.</td>
+<td class="obs-cell"><span class="tag">Pendente</span><strong>Michael Santos</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Manutenção</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="7" data-total="9" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">7 / 9</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><span class="status done">Finalizado</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="9" data-total="9" data-color="green"></div><div class="prog-info"><span class="prog-fraction">9 / 9</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>25/05/26 · 09–10h<b>Implantação</b>25/05/26 · 10–18h<b>Suporte</b>26–27/05/26<b>Revisão</b>28/05/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>Aguardam configuração: <strong>Miguel Costa</strong> e <strong>Luciano Cruz</strong> <span class="tag">Atenção</span>Windows 10 Home.</td>
+<td class="obs-cell">Todas as 9 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Comercial</span></td>
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="5" data-total="5" data-color="green"></div><div class="prog-info"><span class="prog-fraction">5 / 5</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>01/06/26 · 09–10h<b>Implantação</b>01/06/26 · 10–18h<b>Suporte</b>02–03/06/26<b>Revisão</b>04/06/26</td>
-<td class="obs-cell">Todos os 5 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 5 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Marketing</span></td>
 <td><span class="status done">Finalizado</span></td>
 <td><div class="prog-cell"><div class="donut" data-done="3" data-total="3" data-color="green"></div><div class="prog-info"><span class="prog-fraction">3 / 3</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><span class="dim">Concluído</span></td>
-<td class="obs-cell">Todos os 3 máquinas configuradas com sucesso.</td>
+<td class="obs-cell">Todas as 3 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Diretoria</span></td>
@@ -559,14 +613,14 @@
 <tr>
 <td><span class="setor-name">Pedreira</span></td>
 <td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="1" data-total="7" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 7</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="5" data-total="6" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">5 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>02/08/26<b>Implantação</b>02/08/26<b>Suporte</b>03/08/26<b>Revisão</b>04/08/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>6 máquinas aguardam configuração.</td>
+<td class="obs-cell"><span class="tag">Pendente</span>Máquina do <strong>Douglas</strong> aguarda configuração.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Rio de Janeiro</span></td>
 <td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="4" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 4</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><div class="prog-cell"><div class="donut" data-done="0" data-total="18" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 18</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>27/07/26<b>Implantação</b>27/07/26<b>Suporte</b>28–29/07/26<b>Revisão</b>30/07/26</td>
 <td class="obs-cell">Setor ainda não iniciou a implantação.</td>
 </tr>
@@ -634,17 +688,17 @@
   // Demais (5): todos (0/0)
   const rows = [
     // Matriz (17)
-    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,4],[6,6],[5,5],[1,2],[5,7],[7,9],[5,5],[3,3],[0,0],
+    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,4],[6,6],[5,5],[1,2],[5,6],[9,9],[5,5],[3,3],[0,0],
     // CEMIG (10)
     [1,2],[0,1],[0,3],[5,17],[2,6],[0,2],[1,3],[0,2],[0,2],[2,7],
     // CNH (3)
     [0,1],[0,1],[1,10],
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
-    [0,8],[0,2],[0,3],[0,1],[1,7],[0,4]
+    [0,8],[0,2],[0,3],[0,1],[5,6],[0,18]
   ];
   const statuses = [
     // Matriz (17)
-    'done','done','done','partial','partial','done','done','done','partial','done','done','partial','partial','partial','done','done','obs',
+    'done','done','done','partial','partial','done','done','done','partial','done','done','partial','partial','done','done','done','obs',
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
     'partial','pending','pending','partial','pending','pending','partial','pending','pending','partial',
     // CNH (3): SGI,Invent,Logist
@@ -685,13 +739,91 @@
   if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
 
   // Ritmo necessário: máquinas restantes / semanas restantes
-  const usersLeft = 187 - 104;
+  const usersLeft = 199 - 110;
   const weeksLeft = diffDays / 7;
   const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
   const bannerRate = document.getElementById('banner-rate');
   if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
 
-  renderDonut(document.getElementById('donut-people'), (104 / 187) * 100, 'green', { labelText: '56%' });
+  renderDonut(document.getElementById('donut-people'), (110 / 199) * 100, 'green', { labelText: '55%' });
+
+  // ── DATA DINÂMICA ──────────────────────────────────
+  const dateEl = document.getElementById('header-date');
+  if (dateEl) {
+    const now = new Date();
+    const months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+    dateEl.textContent = `Última atualização: ${String(now.getDate()).padStart(2,'0')}/${months[now.getMonth()]}/${now.getFullYear()} · ${String(now.getHours()).padStart(2,'0')}h${String(now.getMinutes()).padStart(2,'0')}`;
+  }
+
+  // ── BARRA DE PROGRESSO GERAL ───────────────────────
+  requestAnimationFrame(() => {
+    const fill = document.getElementById('progress-bar-fill');
+    const pctLabel = document.getElementById('progress-bar-pct');
+    if (fill) fill.style.width = pctGeral + '%';
+    if (pctLabel) pctLabel.textContent = pctGeral + '%';
+  });
+
+  // ── PROGRESSO POR GRUPO ────────────────────────────
+  // Matriz rows índices 0-16 (17), CEMIG 17-26 (10), CNH 27-29 (3), Demais 30-35 (6)
+  const grupos = [
+    { key: 'matriz', start: 0,  end: 17, label: 'Matriz' },
+    { key: 'cemig',  start: 17, end: 27, label: 'CEMIG'  },
+    { key: 'cnh',    start: 27, end: 30, label: 'CNH'    },
+    { key: 'demais', start: 30, end: 36, label: 'Demais' },
+  ];
+  grupos.forEach(g => {
+    const grpRows = rows.slice(g.start, g.end);
+    const totalDoneGrp = grpRows.reduce((s,[d])=>s+d, 0);
+    const totalMaqGrp  = grpRows.reduce((s,[,t])=>s+t, 0);
+    const pctGrp = totalMaqGrp > 0 ? Math.round((totalDoneGrp / totalMaqGrp) * 100) : 0;
+    const pctEl  = document.getElementById('grp-pct-'  + g.key);
+    const barEl  = document.getElementById('grp-bar-'  + g.key);
+    const fracEl = document.getElementById('grp-frac-' + g.key);
+    if (pctEl)  pctEl.textContent  = pctGrp + '%';
+    if (fracEl) fracEl.textContent = totalDoneGrp + ' / ' + totalMaqGrp + ' máquinas';
+    requestAnimationFrame(() => { if (barEl) barEl.style.width = pctGrp + '%'; });
+  });
+
+  // ── FILTRO POR STATUS ──────────────────────────────
+  function filterRows(status) {
+    // atualizar botões
+    ['all','done','partial','pending'].forEach(s => {
+      const btn = document.getElementById('filter-' + s);
+      if (!btn) return;
+      const colors = { all: 'var(--accent)', done: 'var(--green)', partial: 'var(--yellow)', pending: 'var(--red)' };
+      const textColors = { all: '#fff', done: '#fff', partial: '#fff', pending: '#fff' };
+      if (s === status) {
+        btn.style.background = colors[s];
+        btn.style.color = textColors[s];
+        btn.style.borderColor = colors[s];
+      } else {
+        btn.style.background = 'transparent';
+        const muted = { all: 'var(--accent)', done: 'var(--green)', partial: '#8a6d00', pending: 'var(--red)' };
+        btn.style.color = muted[s];
+        btn.style.borderColor = colors[s];
+      }
+    });
+
+    // filtrar linhas
+    const allRows = document.querySelectorAll('tbody tr');
+    let visible = 0;
+    allRows.forEach(row => {
+      const badge = row.querySelector('.status');
+      if (!badge) { row.style.display = ''; return; }
+      const isDone    = badge.classList.contains('done');
+      const isPartial = badge.classList.contains('partial');
+      const isPending = badge.classList.contains('pending');
+      const show = status === 'all'
+        || (status === 'done'    && isDone)
+        || (status === 'partial' && isPartial)
+        || (status === 'pending' && isPending);
+      row.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    const countEl = document.getElementById('filter-count');
+    if (countEl) countEl.textContent = status === 'all' ? '' : visible + ' setores';
+  }
+
 </script>
 
 </body>
