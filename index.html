@@ -234,7 +234,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Máquinas Finalizadas</div>
-<div class="kpi-value mono">129 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 199</span></div>
+<div class="kpi-value mono">130 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 199</span></div>
 <div class="kpi-sub">Máquinas configuradas</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -260,7 +260,7 @@
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#161616; margin-bottom:6px;">Cronograma previsto até <span style="color:#0f62fe;">31 de julho de 2026</span></div>
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#525252; line-height:1.6;">
         O projeto está em andamento com <strong>36 setores</strong> monitorados distribuídos entre Matriz, Contagem CEMIG, Contagem CNH e demais unidades.
-        Atualmente <strong>129 de 199 máquinas mapeadas</strong> estão configuradas (65%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
+        Atualmente <strong>130 de 199 máquinas mapeadas</strong> estão configuradas (65%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
         <span style="color:#da1e28; font-weight:600;">Atenção:</span> pendências individuais como máquinas não configuradas durante a implantação e equipamentos com Windows 10 Home precisam ser resolvidas paralelamente ao cronograma para garantir o fechamento até o prazo.
       </div>
     </div>
@@ -613,10 +613,10 @@
 </tr>
 <tr>
 <td><span class="setor-name">Pedreira</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="5" data-total="6" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">5 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><span class="status done">Finalizado</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="6" data-total="6" data-color="green"></div><div class="prog-info"><span class="prog-fraction">6 / 6</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>02/08/26<b>Implantação</b>02/08/26<b>Suporte</b>03/08/26<b>Revisão</b>04/08/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span>Máquina do <strong>Douglas</strong> aguarda configuração.</td>
+<td class="obs-cell">Todas as 6 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Rio de Janeiro</span></td>
@@ -696,7 +696,7 @@
     // CNH (3)
     [0,1],[0,1],[1,10],
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
-    [2,6],[0,2],[0,3],[0,1],[5,6],[0,18]
+    [2,6],[0,2],[0,3],[0,1],[6,6],[0,18]
   ];
   const statuses = [
     // Matriz (17)
@@ -706,7 +706,7 @@
     // CNH (3): SGI,Invent,Logist
     'pending','pending','partial',
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
-    'partial','pending','pending','pending','partial','pending'
+    'partial','pending','pending','pending','done','pending'
   ];
 
   const totalSetores = statuses.length;
@@ -746,13 +746,13 @@
   if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
 
   // Ritmo necessário: máquinas restantes / semanas restantes
-  const usersLeft = 199 - 129;
+  const usersLeft = 199 - 130;
   const weeksLeft = diffDays / 7;
   const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
   const bannerRate = document.getElementById('banner-rate');
   if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
 
-  renderDonut(document.getElementById('donut-people'), (129 / 199) * 100, 'green', { labelText: '65%' });
+  renderDonut(document.getElementById('donut-people'), (130 / 199) * 100, 'green', { labelText: '65%' });
 
   // ── DATA DINÂMICA ──────────────────────────────────
   const dateEl = document.getElementById('header-date');
