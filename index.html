@@ -234,7 +234,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Máquinas Finalizadas</div>
-<div class="kpi-value mono">125 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 199</span></div>
+<div class="kpi-value mono">129 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 199</span></div>
 <div class="kpi-sub">Máquinas configuradas</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -260,7 +260,7 @@
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:15px; font-weight:600; color:#161616; margin-bottom:6px;">Cronograma previsto até <span style="color:#0f62fe;">31 de julho de 2026</span></div>
       <div style="font-family:'IBM Plex Sans',sans-serif; font-size:13px; color:#525252; line-height:1.6;">
         O projeto está em andamento com <strong>36 setores</strong> monitorados distribuídos entre Matriz, Contagem CEMIG, Contagem CNH e demais unidades.
-        Atualmente <strong>125 de 199 máquinas mapeadas</strong> estão configuradas (63%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
+        Atualmente <strong>129 de 199 máquinas mapeadas</strong> estão configuradas (65%). As implantações da Matriz estão em fase avançada; as unidades CEMIG e CNH têm datas agendadas entre junho e julho de 2026.
         <span style="color:#da1e28; font-weight:600;">Atenção:</span> pendências individuais como máquinas não configuradas durante a implantação e equipamentos com Windows 10 Home precisam ser resolvidas paralelamente ao cronograma para garantir o fechamento até o prazo.
       </div>
     </div>
@@ -389,10 +389,10 @@
 </tr>
 <tr data-winhome="true">
 <td><span class="setor-name">DP</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="3" data-total="4" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">3 / 4</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><span class="status done">Finalizado</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="3" data-total="3" data-color="green"></div><div class="prog-info"><span class="prog-fraction">3 / 3</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>27/04/26 · 09–10h<b>Implantação</b>27/04/26 · 10–18h<b>Suporte</b>28–29/04/26<b>Revisão</b>30/04/26</td>
-<td class="obs-cell"><span class="tag">Atenção</span>Máquina da <strong>Vanessa</strong> possui Windows 11 Home — requer atenção especial na configuração do AD.</td>
+<td class="obs-cell">Todas as 3 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">RH</span></td>
@@ -480,10 +480,10 @@
 </tr>
 <tr>
 <td><span class="setor-name">Recebimento</span></td>
-<td><span class="status pending">Pendente</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="0" data-total="3" data-color="red"></div><div class="prog-info"><span class="prog-fraction">0 / 3</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><span class="status done">Finalizado</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="4" data-total="4" data-color="green"></div><div class="prog-info"><span class="prog-fraction">4 / 4</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>15/06/26<b>Implantação</b>15/06/26<b>Suporte</b>16/06/26<b>Revisão</b>17/06/26</td>
-<td class="obs-cell">Setor ainda não iniciou a implantação.</td>
+<td class="obs-cell">Todas as 4 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Logística</span></td>
@@ -690,9 +690,9 @@
 
   const rows = [
     // Matriz (17)
-    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,4],[6,6],[5,5],[1,2],[5,6],[9,9],[5,5],[3,3],[0,0],
+    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,3],[6,6],[5,5],[1,2],[5,6],[9,9],[5,5],[3,3],[0,0],
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
-    [2,2],[0,1],[0,3],[6,17],[8,8],[0,2],[1,3],[1,2],[2,2],[4,7],
+    [2,2],[0,1],[4,4],[6,17],[8,8],[0,2],[1,3],[1,2],[2,2],[4,7],
     // CNH (3)
     [0,1],[0,1],[1,10],
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
@@ -700,9 +700,9 @@
   ];
   const statuses = [
     // Matriz (17)
-    'done','done','done','partial','partial','done','done','done','partial','done','done','partial','partial','done','done','done','obs',
+    'done','done','done','partial','partial','done','done','done','done','done','done','partial','partial','done','done','done','obs',
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
-    'done','pending','pending','partial','done','pending','partial','partial','done','partial',
+    'done','pending','done','partial','done','pending','partial','partial','done','partial',
     // CNH (3): SGI,Invent,Logist
     'pending','pending','partial',
     // Demais (6): Triasa, Uberlândia, MontesClaros, Juatuba, Pedreira, RJ
@@ -746,13 +746,13 @@
   if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
 
   // Ritmo necessário: máquinas restantes / semanas restantes
-  const usersLeft = 199 - 125;
+  const usersLeft = 199 - 129;
   const weeksLeft = diffDays / 7;
   const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
   const bannerRate = document.getElementById('banner-rate');
   if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
 
-  renderDonut(document.getElementById('donut-people'), (125 / 199) * 100, 'green', { labelText: '63%' });
+  renderDonut(document.getElementById('donut-people'), (129 / 199) * 100, 'green', { labelText: '65%' });
 
   // ── DATA DINÂMICA ──────────────────────────────────
   const dateEl = document.getElementById('header-date');
