@@ -234,7 +234,7 @@
 <div class="kpi-flex">
 <div class="kpi-text">
 <div class="kpi-label">Máquinas Finalizadas</div>
-<div class="kpi-value mono">147 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 204</span></div>
+<div class="kpi-value mono">148 <span style="font-size:16px;font-weight:400;color:var(--text-muted)">/ 204</span></div>
 <div class="kpi-sub">Máquinas configuradas</div>
 </div>
 <div class="donut donut-lg" id="donut-people"></div>
@@ -410,10 +410,10 @@
 </tr>
 <tr>
 <td><span class="setor-name">Jurídico</span></td>
-<td><span class="status partial">Parcial</span></td>
-<td><div class="prog-cell"><div class="donut" data-done="1" data-total="2" data-color="yellow"></div><div class="prog-info"><span class="prog-fraction">1 / 2</span><span class="prog-pct-text">máquinas</span></div></div></td>
+<td><span class="status done">Finalizado</span></td>
+<td><div class="prog-cell"><div class="donut" data-done="2" data-total="2" data-color="green"></div><div class="prog-info"><span class="prog-fraction">2 / 2</span><span class="prog-pct-text">máquinas</span></div></div></td>
 <td class="dates-cell"><b>Alinhamento</b>14/05/26 · 09–10h<b>Implantação</b>14/05/26 · 10–18h<b>Suporte</b>15–18/05/26<b>Revisão</b>19/05/26</td>
-<td class="obs-cell"><span class="tag">Pendente</span><strong>Fabiana da Silva Cunha</strong> aguarda configuração.</td>
+<td class="obs-cell">Todas as 2 máquinas configuradas com sucesso.</td>
 </tr>
 <tr>
 <td><span class="setor-name">Locação</span></td>
@@ -690,7 +690,7 @@
 
   const rows = [
     // Matriz (17)
-    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,3],[6,6],[5,5],[1,2],[6,6],[9,9],[5,5],[3,3],[0,0],
+    [6,6],[9,9],[7,7],[9,10],[2,3],[9,9],[10,10],[7,7],[3,3],[6,6],[5,5],[2,2],[6,6],[9,9],[5,5],[3,3],[0,0],
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
     [2,2],[0,1],[4,4],[8,18],[8,8],[0,2],[1,3],[1,2],[2,2],[8,10],
     // CNH (3)
@@ -700,7 +700,7 @@
   ];
   const statuses = [
     // Matriz (17)
-    'done','done','done','partial','partial','done','done','done','done','done','done','partial','done','done','done','done','obs',
+    'done','done','done','partial','partial','done','done','done','done','done','done','done','done','done','done','done','obs',
     // CEMIG (10): SGI,RH,Receb,Logist,Invent,Fat,Exped,DP,Comerc,Transp
     'done','done','done','partial','done','pending','done','done','done','partial',
     // CNH (3): SGI,Invent,Logist
@@ -746,13 +746,13 @@
   if (bannerDays) bannerDays.textContent = diffDays > 0 ? diffDays + ' dias' : 'Encerrado';
 
   // Ritmo necessário: máquinas restantes / semanas restantes
-  const usersLeft = 204 - 147;
+  const usersLeft = 204 - 148;
   const weeksLeft = diffDays / 7;
   const rateNeeded = weeksLeft > 0 ? Math.ceil(usersLeft / weeksLeft) : '—';
   const bannerRate = document.getElementById('banner-rate');
   if (bannerRate) bannerRate.textContent = weeksLeft > 0 ? '~' + rateNeeded + ' / sem.' : '—';
 
-  renderDonut(document.getElementById('donut-people'), (147 / 204) * 100, 'green', { labelText: '72%' });
+  renderDonut(document.getElementById('donut-people'), (148 / 204) * 100, 'green', { labelText: '73%' });
 
   // ── DATA DINÂMICA ──────────────────────────────────
   const dateEl = document.getElementById('header-date');
